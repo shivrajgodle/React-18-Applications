@@ -47,3 +47,31 @@ align-self: stretch;
     text-transform: uppercase;
     letter-spacing: 3px;
   }
+
+  .pizzas{
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .pizza {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .pizza img {
+    width: 12 rem;
+  }
+
+  .pizza div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pizza span {
+    display: block;
+    font-size: 1.6rem;
+  }
+  

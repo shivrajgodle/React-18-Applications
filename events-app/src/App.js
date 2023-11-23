@@ -1,20 +1,24 @@
+import { useState } from 'react';
 import './App.css'
 
 const messages = ['Learn' , 'Experiment' , 'Master']
 
 export default function App(){
-  const step = 2;
-
+  const [step , setStap] = useState(1);
+  const [isOpen , setIsOpen] = useState(true);
+  
   function previous(){
-    alert('previous')
+   if(step > 1) setStap(step - 1)
   }
 
   function next(){
-    alert('next')
+    if(step < 3) setStap(step + 1)
   }
 
 return (
-<div className="steps">
+  <>
+    <div className='close' onClick={()=> setIsOpen(!isOpen)}>X</div>
+    {isOpen && <div className="steps">
   <div className="numbers">
     <div className={`${step >= 1 ? 'active' : ''}`}>1</div>
     <div className={`${step >= 2 ? 'active' : ''}`}>2</div>
@@ -27,6 +31,8 @@ return (
     <button onClick={next} style={{backgroundColor:'#7950f2', color: '#fff'}}>Next</button>
   </div>
 
-</div>
+</div>}
+
+</>
 );
 }

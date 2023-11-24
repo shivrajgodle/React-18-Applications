@@ -4,20 +4,20 @@ import './App.css'
 const messages = ['Learn' , 'Experiment' , 'Master']
 
 export default function App(){
-  const [step , setStap] = useState(1);
+  const [step , setStep] = useState(1);
   const [isOpen , setIsOpen] = useState(true);
   
   function previous(){
-   if(step > 1) setStap(step - 1)
+   if(step > 1) setStep((step) => step - 1)
   }
 
   function next(){
-    if(step < 3) setStap(step + 1)
+    if(step < 3) setStep((step) => step + 1)
   }
 
 return (
   <>
-    <div className='close' onClick={()=> setIsOpen(!isOpen)}>X</div>
+    <div className='close' onClick={()=> setIsOpen((s) => !s)}>X</div>
     {isOpen && <div className="steps">
   <div className="numbers">
     <div className={`${step >= 1 ? 'active' : ''}`}>1</div>
